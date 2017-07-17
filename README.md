@@ -1,6 +1,6 @@
 # funsChat
 Node + Socket.io + Express
-欢迎star
+(欢迎star)
 
 ```
 $ git clone https://github.com/wclimb/funsChat.git
@@ -13,7 +13,6 @@ $ cnpm i
 ```
 ```
 $ node index
-
 ```
 ## view
 
