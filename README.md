@@ -17,4 +17,4 @@ $ node index
 ```
 ## view
 
-![img](http://oswpupqu5.bkt.clouddn.com/funschat2.gif)
+![img](http://oswpupqu5.bkt.clouddn.com/funschat3.gif)
