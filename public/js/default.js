@@ -72,6 +72,7 @@ $(function () {
     }
 
     if (bg) {
+
        li.innerHTML = `<div class="avator"><img src="./images/3.gif" alt="" /></div><div class="_msg_content"><p>${user} ${date}</p> <div class="_codeMsg">${msg}</div></div>`;
     }
     
@@ -121,18 +122,19 @@ $(function () {
 
   // 发送信息
   $('.send_msg .send_btn').click(function(){
-  if ($('.send_text').val().trim() === '') {
-    $('.send_text').attr('placeholder','请输入内容 ')
-  } else{
-    socket.emit('chat message', $('.send_text').val());
-    message('^_^',$('.send_text').val() ,true )
+    if ($('.send_text').val().trim() === '') {
+      $('.send_text').attr('placeholder','请输入内容 ')
+    } else{
+      socket.emit('chat message', $('.send_text').val());
+      message('^_^',$('.send_text').val() ,true )
 
-    $('.send_text').val('');
-     $('.send_text').attr('placeholder',' ')
-    return false;
-  }   
+      $('.send_text').val('');
+       $('.send_text').attr('placeholder',' ')
+      return false;
+    }   
   });
-
+  
+  // 监听新消息
   socket.on('newMsg', function(user,msg){   
     message(user,msg,false)
   });
@@ -175,7 +177,7 @@ $(function () {
   })
   // 登录成功
   socket.on('loginSuccess',()=>{
-    document.title='welcome'+$('#nickname').val()
+    document.title='welcome ^_^ '+$('#nickname').val()
     $('.dialog').hide()
   })
 
@@ -258,7 +260,7 @@ $(function () {
   })
 
   socket.on('codeMsg',(user,msg)=>{
-    message(user,msg,false);
+    message(user,msg,false,true);
   })
 
   

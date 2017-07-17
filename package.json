@@ -1,7 +1,7 @@
 {
-  "name": "funs chat",
+  "name": "funsChat",
   "version": "0.0.1",
-  "description": "app",
+  "description": "funsChat",
   "dependencies": {
     "express": "^4.15.3",
     "highlight": "^0.2.4",
