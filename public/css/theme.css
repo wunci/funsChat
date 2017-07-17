@@ -1,0 +1,389 @@
+* {
+  margin: 0;
+  padding: 0; 
+  box-sizing: 
+  border-box;
+}
+body { 
+  font: 13px Helvetica, Arial;
+}
+
+.status{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+#messages { 
+  list-style-type: none;
+   margin: 0;
+    padding: 0;
+
+}
+#messages li { 
+  padding: 5px 10px;;
+  position: relative; 
+}
+#messages li p{
+  margin-bottom: 5px;
+  color: #ec5056;
+
+}
+#messages li ._msg{
+  font-size: 16px; 
+  padding: 6px;
+  background: #23a6f5;
+  color: #fff;
+  border-radius: 5px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+  display: inline-block;
+  align-self: flex-end;
+
+}
+._msg_content{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-direction: column;
+}
+.avator{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 5px 10px #ccc;
+  margin-left: 10px;
+  /*transform: translateY(-10px);*/
+  overflow: hidden;
+  align-self: flex-start;
+}
+.avator img{
+  width: 100%;
+
+}
+.avator_style{
+  margin: 0;
+  margin-right: 10px;
+  transform: translateY(0);
+  
+}
+.upload_img_content{
+   max-width: 50%;
+  max-height: 200px;
+  color: #ec5051;
+  text-align: right;
+}
+.upload_img_content img{
+  width: 50%;
+}
+#messages  .left{
+  text-align: left;
+  margin-left: 10px
+}
+.right{
+  text-align: right;
+}
+.dialog{
+  background: rgba(0,0,0,0.2);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99999999999
+}
+.container{
+   position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  
+}
+
+
+.chat{
+  position: relative;
+  max-width: 700px;
+  height: 600px;
+  overflow: hidden;
+  margin: 20px auto;
+  background: ;
+  box-shadow: 0px 5px 15px #ccc;
+}
+#nickname{
+  border: none;
+  outline: none;
+  width: 200px;
+  height: 26px;
+  padding-left: 10px;
+  border-radius: 15px;
+}
+#ok{
+  position: absolute;
+  right: -40px;
+  top: 0;
+  border: none;
+  outline: none;
+  width: 60px;
+  height: 27px;
+  border-radius: 15px;
+  transform: translate(-20px,0);
+  cursor: pointer;
+  background: #23a6f5;
+  color: #fff;
+  /*  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;*/
+}
+.content{
+  position: relative;
+}
+#messages {
+  width: 100%;
+  height: 345px;
+  overflow: auto;
+  /* background: url(./images/bg1.jpg);
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%; */
+  z-index: 999999;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.blur{
+  width: 100%;
+  height: 345px;
+  filter: blur(12px);
+  background: url(../images/bg1.jpg);
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.send_msg{
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 195px;
+}
+.send_text {
+  width: 100%;
+  padding: 50px 0  0 20px;
+  outline: none;
+  border: none;
+  border-top: 1px solid #ccc;
+  box-shadow: 5px 5px 5px #ccc;
+  resize: none;
+  font-size: 16px
+}
+.send_msg .send_btn{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  border: none;
+  width: 80px;
+  height: 35px;
+  cursor: pointer;
+  outline: none;
+  background: #23a6f5;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.send_picture{
+  position: absolute;
+  top: -20px;
+  left: 0;
+  z-index: 999999999;
+}
+.picture{
+  width: 40%;
+  transform: translateY(-90%);
+  display: none;
+  background: #fff;
+  z-index: 99999999;
+}
+.picture img{
+  width:40px;
+  margin: 2px;
+}
+.picture img:hover{
+  border: 2px solid #ddd;
+}
+.show_picture{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  z-index: 9999;
+}
+.send_file{
+  position: absolute;
+  top: 4px;
+  left: 70px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.send_file img{
+  width: 35px;
+  cursor: pointer;
+}
+.send_file input{
+  position: absolute;
+  left: 0;
+  top: -40px;
+  width: 60px;
+  height: 100px;
+  opacity: 0;
+  cursor: pointer;
+}
+.code_btn{
+  position: absolute; 
+  top: 0;
+  left: 120px;
+}
+.code_btn .code{
+  width: 40px;
+  cursor: pointer;
+
+}
+.code_diaglog{
+
+  position: absolute;
+  /*display: none; */
+  transform:scale(0) translateY(-130%);
+  z-index: 999999;
+ 
+}
+.code_text{
+  outline: none;
+  resize: none; 
+  border: none;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+}
+.code_diaglog button{
+  border: none;
+  outline: none;
+  width: 49px;
+  height: 26px;
+  border-radius: 15px;
+  cursor: pointer;
+  background: #23a6f5;
+  color: #fff
+}
+.send_code{
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-120%);
+}
+.send_code_cancel{
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+
+}
+.notice{
+  height: 40px;
+  background: #fff;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+
+}
+.notice img{
+  width: 35px;
+  margin: 0 10px 0  20px;
+
+}
+.notice div{
+  height: 35px;
+}
+.notice_list{
+  transition: all 0.5s;
+
+}
+.color{
+  color: #ec5051;
+}
+.text{
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+/*pre code{
+background: #23241f;
+color: 
+}*/
+._codeMsg{
+  background: transparent !important;
+      align-self: flex-end;
+}
+.hljs{
+  display:inline-block;
+  overflow-x:auto;
+  padding:0.5em;
+  background:#23241f;
+  border-radius: 5px;
+  color: #fff;
+}
+.table_show{
+   animation: table_show 0.5s;
+   animation-fill-mode: forwards;
+}
+@keyframes table_show{
+  from{
+    transform: scale(0) translateY(-130%);
+  }
+  to{
+    transform: scale(1) translateY(-130%);
+  }
+}
+
+
+
+#messages {
+
+}
+  
+#messages::-webkit-scrollbar {
+  width:5px;
+  height:5px;
+}
+#messages::-webkit-scrollbar-button    {
+  /*background-color:#FF7677;*/
+}
+#messages::-webkit-scrollbar-track     {
+  /*background:#FF66D5;*/
+}
+#messages::-webkit-scrollbar-track-piece {
+  /*background:#ff0000;*/
+}
+#messages::-webkit-scrollbar-thumb{
+  background-color: #23a6f5;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+  border-radius:8px;
+}
+
+#messages::-webkit-scrollbar-corner {
+  background:#82AFFF;
+}
+#messages::-webkit-scrollbar-resizer  {
+  /*background:#FF0BEE;*/
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <title>funs chat</title>
+    <link rel="stylesheet" href="css/theme.css">
+  </head>
+<body>
+  <div class="chat">
+    <!-- 当前用户数量 -->
+    <div class="status"></div>
+    <!-- 公告 -->
+    <div class="notice">
+      <img src="./images/icon4.png" alt="">
+      <div class="notice_list"> </div>
+    </div>  
+    <!-- 聊天内容区 -->
+    <div class="content">
+      <ul id="messages"></ul>
+      <div class="blur"></div>
+    </div>
+    <!-- 发送信息 -->
+    <div class="send_msg">
+      <textarea class="send_text" name="" id="" cols="90" rows="10"></textarea>
+      <button class="send_btn">发送</button>
+      <div class="send_file">
+        <img  src="./images/icon2.png" alt="">
+        <input type="file"   id="sendImage">
+      </div>
+      <!-- 表情 -->
+      <div class="send_picture">
+        <img class="show_picture" src="./images/icon1.png" alt="">
+        <div class="picture"></div>
+      </div>
+      <!-- 发送代码 -->
+       <div class="code_btn">
+        <img class="code" src="./images/icon3.png" alt="">
+        <div class="code_diaglog">
+          <textarea  class="code_text" name="" id="" cols="30" rows="10"></textarea>
+          <button class="send_code">发送</button>
+          <button class="send_code_cancel">取消</button>
+        </div>    
+      </div>
+    </div>
+    <!-- 输入用户名 -->
+    <div style="display: none;" class="dialog">
+      <div class="container">
+        <input type="text" placeholder="name" id="nickname">
+        <input type="button" value="确定" id="ok">
+        <div class="text"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="http://cdn.bootcss.com/markdown-it/8.3.1/markdown-it.min.js"></script>
+  <script src="./js/default.js"></script>
+  </body>
+</html>
