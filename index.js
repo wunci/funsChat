@@ -16,7 +16,6 @@ var md = require('markdown-it')({
 });
 
 var users=[]
-
 app.use('/', require('express').static(__dirname + '/public'));
 app.get('/', function(req, res){
   res.sendFile('./index.html');
@@ -29,19 +28,19 @@ io.on('connection', function(socket){
   		socket.broadcast.emit('newMsg', socket.nickname, msg);
   	});
   // 登录
-  	socket.on('login', function(msg){
-  		if (users.indexOf(msg)>-1) {
-  			socket.emit('user repeate');
-  		}
-     	else{
-     		socket.userIndex=users.length;
-     		socket.nickname=msg;
-     		users.push(msg)
-     		socket.emit('loginSuccess')
-     		io.sockets.emit('system', msg, users.length, 'login');
-     	}
-  	});
-  	//断开连接的事件
+	socket.on('login', function(msg){
+		if (users.indexOf(msg)>-1) {
+			socket.emit('user repeate');
+		}
+   	else{
+   		socket.userIndex=users.length;
+   		socket.nickname=msg;
+   		users.push(msg)
+   		socket.emit('loginSuccess')
+   		io.sockets.emit('system', msg, users.length, 'login');
+   	}
+	});
+  //断开连接的事件
 	socket.on('disconnect', function() {
 	    //将断开连接的用户从users中删除
 	    users.splice(socket.userIndex, 1);
