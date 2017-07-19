@@ -1,4 +1,19 @@
-const socket = io();    
+const socket = io(); 
+ // markdown
+const  md=window.markdownit({
+      highlight: function (str, lang) {
+        if (lang && hljs.getLanguage(lang)) {
+          try {
+            return '<pre class="hljs"><code>' +
+                   hljs.highlight(lang, str, true).value +
+                   '</code></pre>';
+          } catch (__) {}
+        }
+        return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
+      }
+    });
+  
+    
 const chat = {
   // 初始化表情包
   init: ()=>{
@@ -7,7 +22,7 @@ const chat = {
     for (var i = 1; i < 24; i++) {
       _html+=`<img src="./images/${i}.gif" title="${i}" alt="" />`
     }
-    console.log(_html)
+    // console.log(_html)
     picture.append(_html)
   },
   // 登录
@@ -21,21 +36,6 @@ const chat = {
         $('.send_text').focus()
      },0)
     }
-  },
-  // markdown
-  md:()=>{
-    window.markdownit({
-      highlight: function (str, lang) {
-        if (lang && hljs.getLanguage(lang)) {
-          try {
-            return '<pre class="hljs"><code>' +
-                   hljs.highlight(lang, str, true).value +
-                   '</code></pre>';
-          } catch (__) {}
-        }
-        return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
-      }
-    });
   },
  // 增加信息函数
   message: (user,msg,right,bg)=>{
