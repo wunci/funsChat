@@ -121,7 +121,7 @@ const chat = {
       $('.code_diaglog').removeClass('table_show')
       console.log($('.code_text').val())
       socket.emit('code message',$('.code_text').val())
-      chat.message('^_^',md.render(`\`\`\`\n${$('.code_text').val()}\n\`\`\``),true,true);
+      chat.message('^_^',md.render(`\`\`\`js\n${$('.code_text').val()}\n\`\`\``),true,true);
       $('.code_text').val('')
     }
   }

@@ -1,7 +1,7 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var hljs = require('highlight');
+var hljs = require('highlight.js');
 var md = require('markdown-it')({
   highlight: function (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
@@ -53,7 +53,7 @@ io.on('connection', function(socket){
 	});
 	// 发送代码
 	 socket.on('code message',(msg)=>{
-	    socket.broadcast.emit('codeMsg',socket.nickname, md.render(`\`\`\`\n${msg}\n\`\`\``));
+	    socket.broadcast.emit('codeMsg',socket.nickname, md.render(`\`\`\`js\n${msg}\n\`\`\``));
 	 })
 
 });

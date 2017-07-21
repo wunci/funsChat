@@ -4,7 +4,7 @@
   "description": "funsChat",
   "dependencies": {
     "express": "^4.15.3",
-    "highlight": "^0.2.4",
+    "highlight.js": "^9.12.0",
     "markdown-it": "^8.3.1",
     "socket.io": "^2.0.3"
   }
