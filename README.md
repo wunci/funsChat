@@ -16,4 +16,4 @@ $ node index
 ```
 ## view
 
-![img](http://oswpupqu5.bkt.clouddn.com/funschat3.gif)
+![img](http://www.wclimb.site/cdn/funschat3.gif)
